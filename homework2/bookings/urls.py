@@ -4,7 +4,10 @@ from rest_framework.routers import DefaultRouter
 from .views import (
     MovieViewSet,
     SeatViewSet,
-    BookingViewSet
+    BookingViewSet,
+    movie_list,
+    seat_booking,
+    booking_history,
 )
 
 router = DefaultRouter()
@@ -25,5 +28,12 @@ router.register(
 )
 
 urlpatterns = [
+
+    path('', movie_list, name='movie_list'),
+
+    path('movie/<int:movie_id>/', seat_booking, name='book_seat'),
+
+    path('history/', booking_history, name='booking_history'),
+
     path('', include(router.urls)),
 ]

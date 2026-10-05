@@ -1,0 +1,49 @@
+<!-- movie_list.html -->
+
+{% extends 'bookings/base.html' %}
+
+{% block title %}
+Movies
+{% endblock %}
+
+{% block content %}
+
+<h2>Available Movies</h2>
+
+<div class="row">
+
+{% for movie in movies %}
+
+<div class="col-md-4">
+
+    <div class="card mb-3">
+
+        <div class="card-body">
+
+            <h4>{{ movie.title }}</h4>
+
+            <p>{{ movie.description }}</p>
+
+            <p>
+                Duration:
+                {{ movie.duration }}
+                min
+            </p>
+
+            {% url 'book_seat' movie.id %}
+
+                Book Seat
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
