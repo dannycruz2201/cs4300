@@ -8,39 +8,44 @@
 
 <table class="table table-striped">
 
-<thead>
+    <thead>
 
-<tr>
-    <th>Movie</th>
-    <th>Seat</th>
-    <th>User</th>
-</tr>
+        <tr>
+            <th>Movie</th>
+            <th>Seat</th>
+            <th>User</th>
+            <th>Date</th>
+        </tr>
 
-</thead>
+    </thead>
 
-<tbody>
+    <tbody>
 
-{% for booking in bookings %}
+    {% for booking in bookings %}
 
-<tr>
+        <tr>
 
-    <td>
-        {{ booking.movie.title }}
-    </td>
+            <td>
+                {{ booking.movie.title }}
+            </td>
 
-    <td>
-        {{ booking.seat.seat_number }}
-    </td>
+            <td>
+                {{ booking.seat.seat_number }}
+            </td>
 
-    <td>
-        {{ booking.user.username }}
-    </td>
+            <td>
+                {{ booking.user.username }}
+            </td>
 
-</tr>
+            <td>
+                {{ booking.booking_date }}
+            </td>
 
-{% endfor %}
+        </tr>
 
-</tbody>
+    {% endfor %}
+
+    </tbody>
 
 </table>
 
