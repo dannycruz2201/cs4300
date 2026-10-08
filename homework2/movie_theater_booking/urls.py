@@ -20,8 +20,12 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path(
-        'api/',
-        include('bookings.urls')
-    ),
+    path('', include('bookings.urls')),
+
+    #path('api/', include('bookings.urls')),
+
+    #Add api endpoints
+    path('api/', include('bookings.api_urls')),
+
+
 ]

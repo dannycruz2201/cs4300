@@ -35,5 +35,5 @@ urlpatterns = [
 
     path('history/', booking_history, name='booking_history'),
 
-    path('', include(router.urls)),
+    #path('', include(router.urls)), remove routers from here
 ]
